@@ -36,7 +36,7 @@ public class LoginPage extends PageObject {
         mensajeError.shouldBeVisible();
     }
 
-    public void validarMensajeCredencialesIncorrectas(String mensajeEsperado) {
+    public void validarMensajeError(String mensajeEsperado) {
         mensajeError.shouldContainText(mensajeEsperado);
     }
 }

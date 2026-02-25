@@ -39,6 +39,12 @@ public class LoginSteps {
     @Step("Validar mensaje de credenciales incorrectas")
     public void validarMensajeCredencialesIncorrectas(String mensajeEsperado) {
         loginPage.validarMensajeErrorVisible();
-        loginPage.validarMensajeCredencialesIncorrectas(mensajeEsperado);
+        loginPage.validarMensajeError(mensajeEsperado);
+    }
+
+    @Step("Validar mensaje de usuario bloqueado")
+    public void validarMensajeUsuarioBloqueado(String mensajeEsperado) {
+        loginPage.validarMensajeErrorVisible();
+        loginPage.validarMensajeError(mensajeEsperado);
     }
 }

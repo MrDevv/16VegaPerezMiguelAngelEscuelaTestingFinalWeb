@@ -61,5 +61,17 @@ public class LoginStepDefinitions {
         loginSteps.validarMensajeCredencialesIncorrectas(LoginErrorMessage.INVALID_CREDENTIALS.getMessage());
     }
 
+    @Cuando("ingresa el usuario bloqueado")
+    public void ingresarUsuarioBloqueado(){
+        user = Serenity.environmentVariables().getProperty("credentials.locked.username");
+        loginSteps.ingresarUsuario(user);
+    }
+
+    @Entonces("se muestra un mensaje de error con un texto de usuario bloqueado")
+    public void mostrarMensajeUsuarioBloqueado(){
+        loginSteps.validarMensajeUsuarioBloqueado(LoginErrorMessage.LOCKED_OUT_USER.getMessage());
+    }
+
+
 
 }

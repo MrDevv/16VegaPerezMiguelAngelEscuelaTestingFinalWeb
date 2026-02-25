@@ -1,5 +1,5 @@
 #language: es
-  @regression
+  @regression @login
   Característica: Iniciar sesión en SouceDemo
 
     Como usuario de SouceDemo
@@ -22,4 +22,11 @@
     * la contraseña no válida
     * hace clic en el botón iniciar sesión
     Entonces se muestra un mensaje de error con un texto de credenciales incorrectas
+
+  @unhappyPath
+  Escenario: Iniciar sesión con un usuario bloqueado
+    Cuando ingresa el usuario bloqueado
+    * la contraseña válida
+    * hace clic en el botón iniciar sesión
+    Entonces se muestra un mensaje de error con un texto de usuario bloqueado
 
