@@ -28,7 +28,7 @@ public class LoginStepDefinitions {
         loginSteps.ingresarUsuario(user);
     }
 
-    @Y("la contraseña válida")
+    @Y("ingresa la contraseña válida")
     public void ingresarPassword(){
         password = Serenity.environmentVariables().getProperty("credentials.valid.password");
         loginSteps.ingresarPassword(password);
@@ -58,7 +58,7 @@ public class LoginStepDefinitions {
 
     @Entonces("se muestra un mensaje de error con un texto de credenciales incorrectas")
     public void mostrarMensajeCredencialesIncorrectas(){
-        loginSteps.validarMensajeCredencialesIncorrectas(LoginErrorMessage.INVALID_CREDENTIALS.getMessage());
+        loginSteps.validarMensajeErrorFomularioLogin(LoginErrorMessage.INVALID_CREDENTIALS.getMessage());
     }
 
     @Cuando("ingresa el usuario bloqueado")
@@ -69,7 +69,27 @@ public class LoginStepDefinitions {
 
     @Entonces("se muestra un mensaje de error con un texto de usuario bloqueado")
     public void mostrarMensajeUsuarioBloqueado(){
-        loginSteps.validarMensajeUsuarioBloqueado(LoginErrorMessage.LOCKED_OUT_USER.getMessage());
+        loginSteps.validarMensajeErrorFomularioLogin(LoginErrorMessage.LOCKED_OUT_USER.getMessage());
+    }
+
+    @Cuando("no ingresa el usuario")
+    public void ingresarUsuarioVacio(){
+        loginSteps.ingresarUsuario("");
+    }
+
+    @Cuando("no ingresa la contraseña")
+    public void ingresarPasswordVacio(){
+        loginSteps.ingresarPassword("");
+    }
+
+    @Entonces("se muestra un mensaje de error con un texto de username requerido")
+    public void mostrarMensajeUsuarioRequerido(){
+        loginSteps.validarMensajeErrorFomularioLogin(LoginErrorMessage.USERNAE_REQUIRED.getMessage());
+    }
+
+    @Entonces("se muestra un mensaje de error con un texto de password requerida")
+    public void mostrarMensajePasswordRequerido(){
+        loginSteps.validarMensajeErrorFomularioLogin(LoginErrorMessage.PASSWORD_REQUIRED.getMessage());
     }
 
 

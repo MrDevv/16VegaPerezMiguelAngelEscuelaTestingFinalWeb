@@ -47,4 +47,10 @@ public class LoginSteps {
         loginPage.validarMensajeErrorVisible();
         loginPage.validarMensajeError(mensajeEsperado);
     }
+
+    @Step("Validar mensaje de error formulario login")
+    public void validarMensajeErrorFomularioLogin(String mensajeEsperado) {
+        loginPage.validarMensajeErrorVisible();
+        loginPage.validarMensajeError(mensajeEsperado);
+    }
 }
