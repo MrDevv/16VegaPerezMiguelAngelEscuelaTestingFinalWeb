@@ -11,8 +11,8 @@
 
 ## 🛠️ Requisitos para Ejecutar el Proyecto
 
-- ☕ Java 17 o superior
-- 📦 Maven 3.11.0 o superior
+- ☕ Java 17 (recomendado) o superior
+- 📦 Maven 3.11.0 (recomendado) o superior
 - 🌐 Navegador (Chrome recomendado)
 
 ---
@@ -65,15 +65,6 @@ mvn serenity:aggregate
 
 ## ▶️ Ejecución de las Pruebas
 
-### 🧩 Ejecución desde Clases Java
-
-#### 🔁 Regresión – Ejecutar todas las pruebas
-1. Ubicar la clase `SauceRunner.java`.
-2. Clic derecho sobre la clase.
-3. Seleccionar **Run 'SauceRunner'**.
-
----
-
 ### 💻 Ejecución mediante Línea de Comandos
 
 #### 🔁 Ejecutar todas las pruebas
@@ -99,3 +90,12 @@ mvn clean verify -Dcucumber.filter.tags="@shopping"
 ```
 mvn clean verify -Dcucumber.filter.tags="@authentication"
 ```
+
+---
+
+### 🧩 Ejecución desde Clases Java
+
+#### 🔁 Regresión – Ejecutar todas las pruebas
+1. Ubicar la clase `SauceRunner.java`.
+2. Clic derecho sobre la clase.
+3. Seleccionar **Run 'SauceRunner'**.
