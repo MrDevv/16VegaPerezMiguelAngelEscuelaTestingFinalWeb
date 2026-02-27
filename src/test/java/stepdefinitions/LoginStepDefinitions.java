@@ -7,7 +7,7 @@ import io.cucumber.java.es.Y;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.Serenity;
 import steps.LoginSteps;
-import utils.LoginErrorMessage;
+import utils.constants.LoginErrorMessage;
 
 public class LoginStepDefinitions {
 
@@ -92,6 +92,14 @@ public class LoginStepDefinitions {
         loginSteps.validarMensajeErrorFomularioLogin(LoginErrorMessage.PASSWORD_REQUIRED.getMessage());
     }
 
+    @Cuando("el usuario cierra sesión")
+    public void cerrarSesión(){
+        loginSteps.cerrarSesion();
+    }
 
+    @Entonces("debería ir a la página de login")
+    public void validarPaginaLogin(){
+        loginSteps.validarPaginaLogin();
+    }
 
 }

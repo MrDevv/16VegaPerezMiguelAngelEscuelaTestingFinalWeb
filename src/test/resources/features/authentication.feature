@@ -1,6 +1,6 @@
 #language: es
   @regression @authentication
-  Característica: Iniciar sesión en SouceDemo
+  Característica: Gestionar autenticación
 
     Como usuario de SouceDemo
     quiero iniciar sesión
@@ -44,4 +44,10 @@
     * hace clic en el botón iniciar sesión
     Entonces se muestra un mensaje de error con un texto de password requerida
 
-
+  @happyPath @logout
+  Escenario: Cerrar sesión correctamente
+    Dado ingresa el usuario válido
+    Y ingresa la contraseña válida
+    Y hace clic en el botón iniciar sesión
+    Cuando el usuario cierra sesión
+    Entonces debería ir a la página de login

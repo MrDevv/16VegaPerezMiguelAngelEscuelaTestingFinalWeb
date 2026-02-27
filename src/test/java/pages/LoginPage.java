@@ -20,6 +20,15 @@ public class LoginPage extends PageObject {
     @FindBy(css = "[data-test='error']")
     WebElementFacade mensajeError;
 
+    @FindBy(id = "react-burger-menu-btn")
+    WebElementFacade buttonBurgerMenu;
+
+    @FindBy(id = "logout_sidebar_link")
+    WebElementFacade buttonCerrarSesion;
+
+    @FindBy(className = "login_logo")
+    WebElementFacade loginLogo;
+
     public void ingresarUsuario(String usuario) {
         this.inputUsuario.type(usuario);
     }
@@ -38,5 +47,17 @@ public class LoginPage extends PageObject {
 
     public void validarMensajeError(String mensajeEsperado) {
         mensajeError.shouldContainText(mensajeEsperado);
+    }
+
+    public void hacerClicButtonBurger(){
+        buttonBurgerMenu.click();
+    }
+
+    public void hacerClicCerrarSesion() {
+        buttonCerrarSesion.click();
+    }
+
+    public boolean validarLogoLogin() {
+        return loginLogo.isVisible();
     }
 }

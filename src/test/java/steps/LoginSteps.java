@@ -36,21 +36,20 @@ public class LoginSteps {
         Assert.assertTrue(inventoryPage.isUrlInventoryPage());
     }
 
-    @Step("Validar mensaje de credenciales incorrectas")
-    public void validarMensajeCredencialesIncorrectas(String mensajeEsperado) {
-        loginPage.validarMensajeErrorVisible();
-        loginPage.validarMensajeError(mensajeEsperado);
-    }
-
-    @Step("Validar mensaje de usuario bloqueado")
-    public void validarMensajeUsuarioBloqueado(String mensajeEsperado) {
-        loginPage.validarMensajeErrorVisible();
-        loginPage.validarMensajeError(mensajeEsperado);
-    }
-
     @Step("Validar mensaje de error formulario login")
     public void validarMensajeErrorFomularioLogin(String mensajeEsperado) {
         loginPage.validarMensajeErrorVisible();
         loginPage.validarMensajeError(mensajeEsperado);
+    }
+
+    @Step("cerrar sesión")
+    public void cerrarSesion() {
+        loginPage.hacerClicButtonBurger();
+        loginPage.hacerClicCerrarSesion();
+    }
+
+    @Step("validar que página login sea visible")
+    public void validarPaginaLogin() {
+        Assert.assertTrue(loginPage.validarLogoLogin());
     }
 }
